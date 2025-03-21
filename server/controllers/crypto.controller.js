@@ -1,6 +1,7 @@
 import axios from "axios";
 import config from "../config/keys.js";
 
+//base url
 const COINGECKO_API_URL = "https://api.coingecko.com/api/v3";
 
 // Controller to fetch cryptocurrency prices
