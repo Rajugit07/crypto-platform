@@ -38,6 +38,54 @@ A real-time crypto tracking dashboard with an AI chatbot that provides insights,
 └── .env  # Store API keys securely
 ```
 
+## 🗂️ Folder Structure (Frontend)
+
+/client
+├── public/
+│ ├── index.html # Main HTML file
+│ ├── favicon.ico # Site icon
+│ └── assets/ # Static assets (images, logos, etc.)
+├── src/
+│ ├── api/
+│ │ ├── cryptoApi.js # Handles API calls for crypto data
+│ │ ├── gasApi.js # Handles API calls for Ethereum gas data
+│ │ └── chatApi.js # Handles chatbot API calls
+│ ├── components/
+│ │ ├── Navbar.jsx # Top navigation bar
+│ │ ├── Footer.jsx # Footer section
+│ │ ├── CryptoList.jsx # Display crypto prices
+│ │ ├── GasTracker.jsx # Ethereum gas tracker UI
+│ │ ├── ChatBot.jsx # Chatbot UI
+│ │ └── Loader.jsx # Loading spinner component
+│ ├── context/
+│ │ ├── CryptoContext.js # Context API for managing crypto data
+│ │ ├── GasContext.js # Context API for managing gas fees
+│ │ └── ChatContext.js # Context API for chatbot integration
+│ ├── hooks/
+│ │ ├── useFetch.js # Custom hook for fetching API data
+│ │ └── useAuth.js # Custom hook for authentication state
+│ ├── pages/
+│ │ ├── Home.jsx # Landing page
+│ │ ├── Crypto.jsx # Crypto price tracking page
+│ │ ├── Gas.jsx # Ethereum gas tracker page
+│ │ ├── Chat.jsx # AI chatbot page
+│ │ ├── Login.jsx # Login page
+│ │ ├── Register.jsx # Registration page
+│ │ └── NotFound.jsx # 404 page
+│ ├── routes/
+│ │ └── AppRoutes.jsx # Define frontend routes using React Router
+│ ├── styles/
+│ │ ├── index.css # Global styles (Tailwind CSS)
+│ │ └── theme.js # Theme settings for Tailwind
+│ ├── App.jsx # Main React component
+│ ├── main.jsx # Entry point, renders App.jsx
+│ ├── config/
+│ │ ├── keys.js # API keys and environment variables
+│ └── utils/
+│ ├── formatDate.js # Utility for formatting dates
+│ ├── constants.js # App-wide constants
+│ └── helpers.js # Helper functions
+
 ---
 
 ## ⚙️ Dependencies
