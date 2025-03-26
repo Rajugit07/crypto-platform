@@ -7,6 +7,7 @@ import etherscanGasPrice from "./routes/gas.route.js";
 import chatRoute from "./routes/ai.chat.route.js";
 import newsRoute from "./routes/crypto.news.route.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 dotenv.config();
 
@@ -16,6 +17,13 @@ const PORT = 8080;
 //middleware
 app.use(cookieParser());
 app.use(express.json());
+
+const corsOption = {
+    origin: "http://localhost:5173/",
+    credential: true,
+};
+
+app.use(cors(corsOption));
 
 //api
 app.use("/api/user", userRoute); //User API
