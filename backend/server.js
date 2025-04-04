@@ -6,21 +6,23 @@ import cryptoRoute from "./routes/crypto.route.js";
 import etherscanGasPrice from "./routes/gas.route.js";
 import chatRoute from "./routes/ai.chat.route.js";
 import newsRoute from "./routes/crypto.news.route.js";
+import cryptoSearchRoute from "./routes/crypto.search.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
 dotenv.config();
 
-const app = express(express.json());
+const app = express();
+app.use(express.json());
 const PORT = 8080;
 
 //middleware
 app.use(cookieParser());
-app.use(express.json());
 
+//cors
 const corsOption = {
-    origin: "http://localhost:5173/",
-    credential: true,
+    origin: "http://localhost:5173",
+    credentials: true,
 };
 
 app.use(cors(corsOption));
@@ -31,6 +33,7 @@ app.use("/api/crypto", cryptoRoute); //Crypto Price API
 app.use("/api/etherscan", etherscanGasPrice); //Etherscan Gas Price API
 app.use("/api/chat", chatRoute); //AI Chat API
 app.use("/api/news", newsRoute); //Crypto News API
+app.use("/api/crypto/", cryptoSearchRoute); //Crypto Search API
 
 //connect db and server
 app.listen(PORT, () => {
