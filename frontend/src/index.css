@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+* {
+    font-family: monospace;
+}
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none; /* for Internet Explorer & Edge */
+        scrollbar-width: none; /* for Firefox */
+    }
+}
