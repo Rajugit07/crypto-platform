@@ -43,52 +43,32 @@ A real-time crypto tracking dashboard with an AI chatbot that provides insights,
 /client
 ├── public/
 │ ├── index.html # Main HTML file
-│ ├── favicon.ico # Site icon
 │ └── assets/ # Static assets (images, logos, etc.)
 ├── src/
-│ ├── api/
-│ │ ├── cryptoApi.js # Handles API calls for crypto data
-│ │ ├── gasApi.js # Handles API calls for Ethereum gas data
-│ │ └── chatApi.js # Handles chatbot API calls
 │ ├── components/
 │ │ ├── Navbar.jsx # Top navigation bar
-│ │ ├── Footer.jsx # Footer section
 │ │ ├── CryptoList.jsx # Display crypto prices
-│ │ ├── GasTracker.jsx # Ethereum gas tracker UI
-│ │ ├── ChatBot.jsx # Chatbot UI
-│ │ └── Loader.jsx # Loading spinner component
-│ ├── context/
-│ │ ├── CryptoContext.js # Context API for managing crypto data
-│ │ ├── GasContext.js # Context API for managing gas fees
-│ │ └── ChatContext.js # Context API for chatbot integration
-│ ├── hooks/
-│ │ ├── useFetch.js # Custom hook for fetching API data
-│ │ └── useAuth.js # Custom hook for authentication state
+│ │ ├── CryptoPrice.jsx # Ethereum gas tracker UI
+│ │ ├── CryptoAssist.jsx # Chatbot UI
+│ │ └── Loading.jsx # Loading spinner component
 │ ├── pages/
 │ │ ├── Home.jsx # Landing page
-│ │ ├── Crypto.jsx # Crypto price tracking page
-│ │ ├── Gas.jsx # Ethereum gas tracker page
-│ │ ├── Chat.jsx # AI chatbot page
 │ │ ├── Login.jsx # Login page
-│ │ ├── Register.jsx # Registration page
-│ │ └── NotFound.jsx # 404 page
+│ │ ├── Signup.jsx # Registration page
+│ │ └── Footer.jsx # Footer section
 │ ├── routes/
 │ │ └── AppRoutes.jsx # Define frontend routes using React Router
 │ ├── styles/
 │ │ ├── index.css # Global styles (Tailwind CSS)
-│ │ └── theme.js # Theme settings for Tailwind
 │ ├── App.jsx # Main React component
 │ ├── main.jsx # Entry point, renders App.jsx
 │ ├── config/
 │ │ ├── keys.js # API keys and environment variables
-│ └── utils/
-│ ├── formatDate.js # Utility for formatting dates
-│ ├── constants.js # App-wide constants
-│ └── helpers.js # Helper functions
+│
 
 ---
 
-## ⚙️ Dependencies
+## ⚙️ Dependencies Backend
 
 ```json
 {
@@ -103,7 +83,24 @@ A real-time crypto tracking dashboard with an AI chatbot that provides insights,
     "mongoose": "^8.12.1",
     "nodemon": "^3.1.9"
 }
-```
+
+```json
+## ⚙️ Dependencies Frontend
+{
+    "@reduxjs/toolkit": "^2.6.1",
+    "@tailwindcss/vite": "^4.0.16",
+    "axios": "^1.8.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.4.0",
+    "redux-persist": "^6.0.0",
+    "sonner": "^2.0.1",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "^4.0.16"
+  }
 
 ---
 
