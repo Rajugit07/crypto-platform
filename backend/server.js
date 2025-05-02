@@ -35,6 +35,10 @@ app.use("/api/chat", chatRoute); //AI Chat API
 app.use("/api/news", newsRoute); //Crypto News API
 app.use("/api/crypto/", cryptoSearchRoute); //Crypto Search API
 
+app.get('/', (req, res) => {
+    res.send('Server is running');
+});
+
 //connect db and server
 app.listen(PORT, () => {
     connectDB(); //databases connect.
