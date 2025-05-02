@@ -12,6 +12,7 @@ const Register = () => {
     });
 
     const navigate = useNavigate();
+    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
 
     const changeHandler = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
@@ -21,7 +22,7 @@ const Register = () => {
         e.preventDefault();
         try {
             const res = await axios.post(
-                "http://localhost:8080/api/user/register",
+                `${apiUrl}/api/user/register`,
                 input,
                 {
                     headers: {

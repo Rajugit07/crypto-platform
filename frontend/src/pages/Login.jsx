@@ -14,6 +14,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
 
     const changeHandler = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
@@ -23,7 +24,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const res = await axios.post(
-                "http://localhost:8080/api/user/login",
+                `${apiUrl}/api/user/login1`,
                 input,
                 {
                     headers: {

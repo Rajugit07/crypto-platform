@@ -17,6 +17,7 @@ const CryptoCoinId = () => {
                 const pageSize = 20;
                 const start = visibleRange * pageSize;
                 const end = start + pageSize;
+                const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
 
                 // If we've fetched all coins, stop here
                 if (start >= coinId.length) {
@@ -31,7 +32,7 @@ const CryptoCoinId = () => {
                 if (!coinIdParam) return;
 
                 const resPrice = await axios.get(
-                    "http://localhost:8080/api/crypto/price",
+                    `${apiUrl}/api/crypto/price`,
                     {
                         params: {
                             coinId: coinIdParam,
