@@ -10,11 +10,12 @@ import logo from "../assets/images/logo2.png";
 const Navbar = () => {
     const { user } = useSelector((store) => store.auth);
     const navigate = useNavigate();
+    const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
     const logoutHandler = async () => {
         try {
             const res = await axios.get(
-                "http://localhost:8080/api/user/logout",
+                `${apiUrl}/api/user/logout`,
                 {
                     withCredentials: true,
                 }
