@@ -10,6 +10,7 @@ export const CryptoList = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [hoveredCoin, setHoveredCoin] = useState(null);
+    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
 
     const handleChange = (e) => {
         setSearch(e.target.value);
@@ -26,7 +27,7 @@ export const CryptoList = () => {
             setError(null);
             try {
                 const res = await axios.get(
-                    `http://localhost:8080/api/crypto/search?coin=${search}`,
+                    `${apiUrl}/api/crypto/search?coin=${search}`,
                     {
                         headers: {
                             "Content-Type": "application/json",
