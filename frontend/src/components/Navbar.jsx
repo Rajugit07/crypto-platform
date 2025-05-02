@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className=" w-full h-auto sticky top-0 z-[9999] ">
             <nav className=" flex items-center justify-between bg-[#111111] h-[10vh] px-10 rounded-md border-b border-zinc-800 w-full">
                 <div className="px-7 py-1.5 ">
-                    <img src={logo} alt="logo" className="w-32" />
+                  <a href="/">  <img src={logo} alt="logo" className="w-32" /></a>
                 </div>
                  <h1 className="text-white font-semibold text-xl">Crypto Price Tracker</h1>
 
