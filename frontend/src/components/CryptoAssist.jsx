@@ -6,7 +6,7 @@ const CryptoList = () => {
     const [conversation, setConversation] = useState([]); // Store conversation history
     const [isTyping, setIsTyping] = useState(false); // Track typing state
     const [typingInterval, setTypingInterval] = useState(null); // Track typing interval ID
-    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
+   const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
     const handleChange = (e) => {
         setInput(e.target.value);

@@ -10,7 +10,7 @@ import logo from "../assets/images/logo2.png";
 const Navbar = () => {
     const { user } = useSelector((store) => store.auth);
     const navigate = useNavigate();
-    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
     const logoutHandler = async () => {
         try {

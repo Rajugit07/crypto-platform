@@ -12,7 +12,7 @@ const Register = () => {
     });
 
     const navigate = useNavigate();
-    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
+   const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
     const changeHandler = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
@@ -20,6 +20,7 @@ const Register = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+
         try {
             const res = await axios.post(
                 `${apiUrl}/api/user/register`,
@@ -36,6 +37,7 @@ const Register = () => {
                 toast.success(res.data.message);
                 navigate("/login");
             }
+             console.log("API URL:", apiUrl);
         } catch (error) {
             console.log(error);
             toast.error(error.response.data.message);

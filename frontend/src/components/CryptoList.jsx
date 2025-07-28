@@ -10,7 +10,7 @@ export const CryptoList = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [hoveredCoin, setHoveredCoin] = useState(null);
-    const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
     const handleChange = (e) => {
         setSearch(e.target.value);
