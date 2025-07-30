@@ -21,11 +21,12 @@ app.use(cookieParser());
 
 //cors
 const corsOption = {
-    origin: ["http://localhost:5173", "https://crypto-platform-frontend.vercel.app/"],
+    origin: ["http://localhost:5173", "https://crypto-platform-frontend.vercel.app"],
     credentials: true,
 };
 
 app.use(cors(corsOption));
+app.options('*', cors(corsOption));
 
 //api
 app.use("/api/user", userRoute); //User API
