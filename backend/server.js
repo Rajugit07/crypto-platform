@@ -21,11 +21,8 @@ app.use(cookieParser());
 
 //cors
 const corsOption = {
-  origin: [
-    "http://localhost:5173",
-    "https://crypto-platform-frontend.vercel.app"  // ✅ add this
-  ],
-  credentials: true,
+    origin: ["http://localhost:5173", "https://crypto-platform-frontend.vercel.app/"],
+    credentials: true,
 };
 
 app.use(cors(corsOption));
