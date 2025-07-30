@@ -15,6 +15,7 @@
     "axios": "^1.8.4",
     "dotenv": "^16.5.0",
     "lucide-react": "^0.534.0",
+    "motion": "^12.23.12",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
