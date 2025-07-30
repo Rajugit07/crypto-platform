@@ -1,8 +1,19 @@
 import React from "react";
-import { FaXTwitter, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa6";
+import {
+    Twitter,
+    Instagram,
+    Github,
+    Linkedin,
+    Mail,
+    MapPin,
+    Phone,
+    ArrowUp,
+    Zap,
+    BarChart3,
+    TrendingUp,
+    Globe,
+} from "lucide-react";
 import { AiOutlineDiscord } from "react-icons/ai";
-import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
-import { BiUpArrowAlt } from "react-icons/bi";
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -12,19 +23,31 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div className="w-full mt-20">
+        <div className="w-full mt-20 relative">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 animate-pulse"></div>
+            </div>
+
             {/* Main Footer */}
-            <footer className="w-full bg-[#111111] border-t border-zinc-800">
+            <footer className="relative w-full bg-gradient-to-br from-slate-900 via-purple-900/80 to-slate-900 backdrop-blur-lg border-t border-purple-500/30 shadow-2xl shadow-purple-500/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
                     {/* Top Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
                         {/* Company Info */}
                         <div className="lg:col-span-2">
-                            <div className="mb-6">
-                                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                                    Crypto Tracker
-                                </h2>
-                                <p className="text-zinc-400 text-base lg:text-lg leading-relaxed max-w-md">
+                            <div className="mb-8">
+                                {/* Brand Logo */}
+                                <div className="flex items-center mb-6 group">
+                                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                                        <BarChart3 className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h2 className="text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+                                        CryptoPulse
+                                    </h2>
+                                </div>
+
+                                <p className="text-gray-300 text-base lg:text-lg leading-relaxed max-w-md">
                                     We're a passionate dev team focused on
                                     building great apps that make tracking your
                                     crypto portfolio simple and seamless. Stay
@@ -34,27 +57,42 @@ const Footer = () => {
                             </div>
 
                             {/* Contact Info */}
-                            <div className="space-y-3">
-                                <div className="flex items-center gap-3 text-zinc-400">
-                                    <MdEmail className="text-xl text-blue-400" />
-                                    <span>contact@cryptotracker.com</span>
+                            <div className="space-y-4">
+                                <div className="group flex items-center gap-3 p-3 rounded-xl bg-black/20 backdrop-blur-lg border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+                                    <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                                        <Mail className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-gray-300 group-hover:text-cyan-400 transition-colors">
+                                        contact@cryptopulse.com
+                                    </span>
                                 </div>
-                                <div className="flex items-center gap-3 text-zinc-400">
-                                    <MdPhone className="text-xl text-green-400" />
-                                    <span>+1 (555) 123-4567</span>
+                                <div className="group flex items-center gap-3 p-3 rounded-xl bg-black/20 backdrop-blur-lg border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+                                    <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
+                                        <Phone className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-gray-300 group-hover:text-green-400 transition-colors">
+                                        +1 (555) 123-4567
+                                    </span>
                                 </div>
-                                <div className="flex items-center gap-3 text-zinc-400">
-                                    <MdLocationOn className="text-xl text-red-400" />
-                                    <span>San Francisco, CA</span>
+                                <div className="group flex items-center gap-3 p-3 rounded-xl bg-black/20 backdrop-blur-lg border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+                                    <div className="w-8 h-8 bg-gradient-to-r from-red-400 to-pink-500 rounded-lg flex items-center justify-center">
+                                        <MapPin className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-gray-300 group-hover:text-red-400 transition-colors">
+                                        San Francisco, CA
+                                    </span>
                                 </div>
                             </div>
                         </div>
 
                         {/* Quick Links */}
                         <div>
-                            <h3 className="text-xl font-semibold text-white mb-6">
-                                Quick Links
-                            </h3>
+                            <div className="flex items-center gap-2 mb-6">
+                                <TrendingUp className="w-5 h-5 text-cyan-400" />
+                                <h3 className="text-xl font-bold text-white">
+                                    Quick Links
+                                </h3>
+                            </div>
                             <ul className="space-y-3">
                                 {[
                                     "Home",
@@ -63,13 +101,21 @@ const Footer = () => {
                                     "News",
                                     "About",
                                     "Contact",
-                                ].map((link) => (
-                                    <li key={link}>
+                                ].map((link, index) => (
+                                    <li
+                                        key={link}
+                                        style={{
+                                            animationDelay: `${index * 0.1}s`,
+                                        }}
+                                    >
                                         <a
                                             href="/"
-                                            className="text-zinc-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
+                                            className="group flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-all duration-300 p-2 rounded-lg hover:bg-purple-500/10"
                                         >
-                                            {link}
+                                            <div className="w-1 h-1 bg-purple-400 rounded-full group-hover:bg-cyan-400 transition-colors"></div>
+                                            <span className="group-hover:translate-x-1 transform transition-transform">
+                                                {link}
+                                            </span>
                                         </a>
                                     </li>
                                 ))}
@@ -78,22 +124,33 @@ const Footer = () => {
 
                         {/* Resources & Social */}
                         <div>
-                            <h3 className="text-xl font-semibold text-white mb-6">
-                                Resources
-                            </h3>
+                            <div className="flex items-center gap-2 mb-6">
+                                <Globe className="w-5 h-5 text-purple-400" />
+                                <h3 className="text-xl font-bold text-white">
+                                    Resources
+                                </h3>
+                            </div>
                             <ul className="space-y-3 mb-8">
                                 {[
                                     "API Documentation",
                                     "Help Center",
                                     "Privacy Policy",
                                     "Terms of Service",
-                                ].map((link) => (
-                                    <li key={link}>
+                                ].map((link, index) => (
+                                    <li
+                                        key={link}
+                                        style={{
+                                            animationDelay: `${index * 0.1}s`,
+                                        }}
+                                    >
                                         <a
                                             href="/"
-                                            className="text-zinc-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform inline-block"
+                                            className="group flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-all duration-300 p-2 rounded-lg hover:bg-purple-500/10"
                                         >
-                                            {link}
+                                            <div className="w-1 h-1 bg-purple-400 rounded-full group-hover:bg-cyan-400 transition-colors"></div>
+                                            <span className="group-hover:translate-x-1 transform transition-transform">
+                                                {link}
+                                            </span>
                                         </a>
                                     </li>
                                 ))}
@@ -101,39 +158,53 @@ const Footer = () => {
 
                             {/* Social Media */}
                             <div>
-                                <h4 className="text-lg font-semibold text-white mb-4">
-                                    Follow Us
-                                </h4>
-                                <div className="flex flex-wrap gap-4">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <Zap className="w-4 h-4 text-pink-400" />
+                                    <h4 className="text-lg font-semibold text-white">
+                                        Follow Us
+                                    </h4>
+                                </div>
+                                <div className="flex flex-wrap gap-3">
                                     {[
                                         {
-                                            icon: FaXTwitter,
+                                            icon: Twitter,
                                             href: "https://x.com/",
-                                            color: "hover:text-blue-400",
+                                            gradient:
+                                                "from-blue-400 to-cyan-500",
                                         },
                                         {
-                                            icon: FaInstagram,
+                                            icon: Instagram,
                                             href: "https://www.instagram.com/",
-                                            color: "hover:text-pink-400",
+                                            gradient:
+                                                "from-pink-400 to-rose-500",
                                         },
                                         {
                                             icon: AiOutlineDiscord,
                                             href: "https://discord.com/",
-                                            color: "hover:text-purple-400",
+                                            gradient:
+                                                "from-purple-400 to-indigo-500",
+                                            isReactIcon: true,
                                         },
                                         {
-                                            icon: FaGithub,
+                                            icon: Github,
                                             href: "https://github.com/",
-                                            color: "hover:text-gray-300",
+                                            gradient:
+                                                "from-gray-400 to-slate-500",
                                         },
                                         {
-                                            icon: FaLinkedin,
+                                            icon: Linkedin,
                                             href: "https://linkedin.com/",
-                                            color: "hover:text-blue-500",
+                                            gradient:
+                                                "from-blue-500 to-blue-600",
                                         },
                                     ].map(
                                         (
-                                            { icon: Icon, href, color },
+                                            {
+                                                icon,
+                                                href,
+                                                gradient,
+                                                isReactIcon,
+                                            },
                                             index
                                         ) => (
                                             <a
@@ -141,9 +212,26 @@ const Footer = () => {
                                                 href={href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className={`text-zinc-400 ${color} transition-all duration-300 transform hover:scale-110 hover:-translate-y-1`}
+                                                className="group relative p-3 bg-black/20 backdrop-blur-lg border border-purple-500/20 rounded-xl hover:border-purple-400/40 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                                                style={{
+                                                    animationDelay: `${
+                                                        index * 0.1
+                                                    }s`,
+                                                }}
                                             >
-                                                <Icon className="text-2xl" />
+                                                <div
+                                                    className={`absolute inset-0 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl`}
+                                                ></div>
+                                                {React.createElement(
+                                                    icon,
+                                                    {
+                                                        className: `${
+                                                            isReactIcon
+                                                                ? "text-2xl"
+                                                                : "w-5 h-5"
+                                                        } text-gray-400 group-hover:text-white transition-colors relative z-10`
+                                                    }
+                                                )}
                                             </a>
                                         )
                                     )}
@@ -153,58 +241,77 @@ const Footer = () => {
                     </div>
 
                     {/* Newsletter Subscription */}
-                    <div className="border-t border-zinc-800 pt-8 mb-8">
+                    <div className="border-t border-purple-500/30 pt-8 mb-8">
                         <div className="max-w-2xl mx-auto text-center">
-                            <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
-                                Stay Updated
-                            </h3>
-                            <p className="text-zinc-400 mb-6">
-                                Get the latest crypto news and market insights
-                                delivered to your inbox.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email..."
-                                    className="flex-1 px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:border-blue-500 transition-colors"
-                                />
-                                <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors duration-300 whitespace-nowrap">
-                                    Subscribe
-                                </button>
+                            <div className="mb-6">
+                                <h3 className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-4">
+                                    Stay Updated
+                                </h3>
+                                <p className="text-gray-300 text-lg">
+                                    Get the latest crypto news and market
+                                    insights delivered to your inbox.
+                                </p>
+                            </div>
+                            <div className="relative group max-w-md mx-auto">
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <div className="relative flex-1">
+                                        <input
+                                            type="email"
+                                            placeholder="Enter your email..."
+                                            className="w-full px-4 py-4 bg-black/30 backdrop-blur-lg border border-purple-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/20 transition-all duration-300"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur"></div>
+                                    </div>
+                                    <button className="group relative px-6 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap">
+                                        <span className="relative z-10 flex items-center gap-2">
+                                            Subscribe
+                                            <Zap className="w-4 h-4 group-hover:animate-bounce" />
+                                        </span>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Bottom Section */}
-                    <div className="border-t border-zinc-800 pt-8">
-                        <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-                            <div className="text-zinc-400 text-center lg:text-left">
-                                <p>
-                                    &copy; {currentYear} Crypto Tracker. All
-                                    rights reserved.
+                    <div className="border-t border-purple-500/30 pt-8">
+                        <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+                            <div className="text-gray-300 text-center lg:text-left">
+                                <p className="text-lg">
+                                    &copy; {currentYear} CryptoPulse. All rights
+                                    reserved.
                                 </p>
-                                <p className="text-sm mt-1">
-                                    Made with ❤️ by passionate developers
+                                <p className="text-sm mt-2 flex items-center justify-center lg:justify-start gap-1">
+                                    Made with{" "}
+                                    <span className="text-red-400 animate-pulse">
+                                        ❤️
+                                    </span>{" "}
+                                    by passionate developers
                                 </p>
                             </div>
 
                             {/* Back to Top Button */}
                             <button
                                 onClick={scrollToTop}
-                                className="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+                                className="group relative flex items-center gap-2 px-6 py-3 bg-black/40 backdrop-blur-lg border border-purple-500/30 rounded-xl text-gray-300 hover:text-white shadow-lg hover:border-purple-400 hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105"
                             >
-                                <BiUpArrowAlt className="text-xl" />
-                                <span className="hidden sm:inline">
+                                <ArrowUp className="w-5 h-5 group-hover:animate-bounce" />
+                                <span className="hidden sm:inline font-semibold">
                                     Back to Top
                                 </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </button>
                         </div>
                     </div>
                 </div>
             </footer>
 
-            {/* Decorative Bottom Bar */}
-            <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+            {/* Enhanced Decorative Bottom Bar */}
+            <div className="relative h-2 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400 animate-pulse opacity-60"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-ping"></div>
+            </div>
         </div>
     );
 };

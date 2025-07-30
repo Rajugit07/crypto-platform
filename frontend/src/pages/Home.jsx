@@ -4,12 +4,13 @@ import CryptoList from "../components/CryptoList";
 import { useSelector } from "react-redux";
 import CryptoAssist from "../components/CryptoAssist";
 import Footer from "./Footer";
+import LandingPage from "../components/LandingPage";
 
 const Home = () => {
     const { user } = useSelector((store) => store.auth);
 
     return (
-        <div className="bg-[#131313] text-white w-full h-auto">
+        <div className="bg-[#131313] w-full h-auto">
             <Navbar />
             {user ? (
                 <>
@@ -24,7 +25,7 @@ const Home = () => {
             ) : (
                 <>
                     <div className="bg-[#131313] w-full h-screen">
-                       <h1>Hii</h1>
+                       <LandingPage />
                     </div>
                 </>
             )}
