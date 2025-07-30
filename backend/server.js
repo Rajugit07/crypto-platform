@@ -21,8 +21,11 @@ app.use(cookieParser());
 
 //cors
 const corsOption = {
-    origin: ["http://localhost:5173", "https://crypto-platform-frontend-7glw2h8ba-raju-pradhanis-projects.vercel.app/"],
-    credentials: true,
+  origin: [
+    "http://localhost:5173",
+    "https://crypto-platform-frontend.vercel.app"  // ✅ add this
+  ],
+  credentials: true,
 };
 
 app.use(cors(corsOption));
